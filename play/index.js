@@ -4,7 +4,7 @@ var miss = require('mississippi')
 var readAudio = require('read-audio')
 var vdomRenderStream = require('vdom-render-stream')
 
-var numSamples = 512
+var numSamples = 1024
 var main = document.querySelector('main')
 
 getUserMedia({
@@ -24,6 +24,7 @@ getUserMedia({
     function (err) {
       throw err // blow up
     }
+   
   )
 })
 
@@ -35,10 +36,10 @@ function render (audio) {
     preserveAspectRatio: 'none',
   }, [
     h('polyline', {
-      stroke: 'black',
-      'stroke-width': '0.005',
+      stroke: 'red',
+      'stroke-width': '0.01',
       fill: 'transparent',
-      points: getPoints(audio).join(' ')
+      points: getPoints(audio).join('  ')
     })
   ])
 }
