@@ -49,7 +49,7 @@ function getPoints(audio) {
   // var numChannels = audio.shape[1]
   var points = new Array(length)
   for (var t = 0; t < length; ++t) {
-    points[t] = t + ',' + audio.get(t)
+    points[t] = t + ',' + audio.data[t]
   }
   return points
 }
