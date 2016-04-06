@@ -1,6 +1,6 @@
 # stream-playground
 
-playground for learning node streams with audio and virtual dom
+playground for learning [node streams](https://nodejs.org/api/stream.html) with audio and [virtual dom](http://jbi.sh/what-is-virtual-dom/)
 
 ## get started
 
@@ -21,7 +21,7 @@ reading the source of any module is the best way to understand what it is doing.
 
 ## play with code
 
-here are some ideas for [how one might play with this code](http://rawgit.com/ahdinosaur/svg-oscilloscope/gh-pages/index.html).
+here are some ideas for [how one might play with this code](https://rawgit.com/ahdinosaur/svg-oscilloscope/gh-pages/index.html).
 
 - brighten or darken the background color based on the overall volume of the audio
 - read keyboard input and display in random positions on the page
