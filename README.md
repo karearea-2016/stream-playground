@@ -26,10 +26,11 @@ here are some ideas for [how one might play with this code](https://rawgit.com/a
 - brighten or darken the background color based on the overall volume of the audio
 - read keyboard input and display in random positions on the page
 - allow user to switch between visualization modes
+- create a fun [VU meter](https://en.wikipedia.org/wiki/VU_meter) that goes up and down with the volume (bonus points for being smooth by normalizing the values)
 
 ### write better visuals
 
-update our `render` function to do something cooler, like display rainbows!
+update our `render` function to do something cooler, like display rainbows and unicorns! :3
 
 ### transform audio
 
@@ -38,9 +39,11 @@ we could add some transform streams in-between our readable and writable streams
 for example:
 
 - [ndsamples-frequencies](https://github.com/ahdinosaur/ndsamples-frequencies): do [frequency analysis](https://en.wikipedia.org/wiki/Fast_Fourier_transform) on audio samples
-  - `require('ndsamples-frequencies/stream')`
+  - `require('ndsamples-frequencies/stream')` returns a transform stream
+  - this module is pulled from [@substack's `frequency-viewer`](https://github.com/substack/frequency-viewer/blob/master/index.js) for use in <http://studio.substack.net>, see his code for how he visualizes the result.
 - [node-audio-rms](https://github.com/livejs/node-audio-rms): [root mean square analysis](https://en.wikipedia.org/wiki/Root_mean_square) (almost like volume) on a audio samples
-  - `require('node-audio-rms')`
+  - `require('node-audio-rms')` returns a transform stream
+  - use this for the VU meter idea
 
 if you want to pass multiple values through the streams, maybe both raw and processed audio, just return multiple objects nested within a larger object into the callback.
 
@@ -50,3 +53,11 @@ we could read from other sources of data, such as:
 
 - [`quay`](https://www.npmjs.com/package/quay): produces key press events
 - [`rainbow-pixels@3.0.0`](https://github.com/ahdinosaur/rainbow-pixels/tree/00efd66db7ef3a44cc695898b313102392a727bc): produces `{ h, s, l }` [`ndpixels`](https://github.com/livejs/ndpixels)
+- [`simple-get`](https://github.com/feross/simple-get): do http requests using the underlying node streams
+
+## see also
+
+- [stream-handbook](https://github.com/substack/stream-handbook)
+- [stream-adventure](https://github.com/substack/stream-adventure)
+- [audio-lab](https://github.com/audio-lab)
+- [web-audio-school](https://github.com/mmckegg/web-audio-school)
